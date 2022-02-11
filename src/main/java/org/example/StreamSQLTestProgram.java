@@ -38,7 +38,7 @@ public class StreamSQLTestProgram {
         String sinkTablePath = params.getRequired("sinkTablePath");
         TableEnvironment tableEnvironment = prepareTableEnv(sourceTablePath);
         System.out.println("[INFO]Run SQL query ...");
-        String queryString = "SELECT t1_key, t1_payload, t2_payload from table_1 join table_2 on table_1.t1_key = table2.t2.key";
+        String queryString = "SELECT t1_key, t1_payload, t2_payload from table_1 join table_2 on table_1.t1_key = table_2.t2_key";
         Table resultTable = tableEnvironment.sqlQuery(queryString);
         String sinkTableName = "query_sinkTable";
         ((TableEnvironmentInternal) tableEnvironment)
