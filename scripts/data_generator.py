@@ -19,7 +19,7 @@ def main():
     keys = 10
     key_matching = 0.5
     dataset_size = 1 # In Gigabytes
-    data_dir = "/home/donatien/GEPICIAD/resource-estimator/sql_illustration/data/{}Gb/tables/"
+    data_dir = "/home/donatien/GEPICIAD/resource-estimator/sql_illustration/data/tables/"
 
     for o, a in opts:
         if o == "--data_dir":
@@ -33,7 +33,6 @@ def main():
         else:
             assert False, "unhandled option"
 
-    data_dir = data_dir.format(dataset_size)
     pathlib.Path(data_dir).mkdir(exist_ok=True, parents=True)
     table1_row = "{}|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"
     table2_row = "{}|BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n"
