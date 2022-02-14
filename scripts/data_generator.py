@@ -29,7 +29,7 @@ def main():
         elif o in ("-m", "--key_matching"):
             key_matching = float(a)
         elif o in ("-s", "--size"):
-            dataset_size = a
+            dataset_size = float(a)
         else:
             assert False, "unhandled option"
 
