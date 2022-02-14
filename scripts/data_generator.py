@@ -41,8 +41,8 @@ def main():
     size_per_table = dataset_size * 1073741824 # in bytes
     rows_per_table = int(size_per_table / row_size)
 
-    open(data_dir + "table_1.dat", "w").write(''.join(table1_row.format(i) for i in range(1, keys)))
-    open(data_dir + "table_2.dat", "w").write(''.join(table2_row.format(randint(1,int(keys / key_matching))) for i in range(rows_per_table)))
+    open(data_dir + "table_1.dat", "w").write(''.join(table1_row.format(i) for i in range(keys)))
+    open(data_dir + "table_2.dat", "w").write(''.join(table2_row.format(randint(0,int(keys / key_matching))) for i in range(rows_per_table)))
 
 if __name__ == "__main__":
     main()
