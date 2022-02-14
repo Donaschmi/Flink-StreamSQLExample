@@ -8,7 +8,7 @@ import sys
 
 def main():
     try:
-        opts, args = getopt.getopt(sys.argv[1:], ":v")
+        opts, args = getopt.getopt(sys.argv[1:], "k:s:m:", ["data_dir=", "keys=", "key_matching=", "size="])
     except getopt.GetoptError as err:
         # print help information and exit:
         print(err)  # will print something like "option -a not recognized"
@@ -26,10 +26,10 @@ def main():
             data_dir = a
         elif o in ("-k", "--keys"):
             keys = int(a)
-        elif o in ("-km", "--key_matching"):
+        elif o in ("-m", "--key_matching"):
             key_matching = float(a)
         elif o in ("-s", "--size"):
-            dataset_size = float(a)
+            dataset_size = a
         else:
             assert False, "unhandled option"
 
