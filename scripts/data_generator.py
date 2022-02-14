@@ -27,7 +27,7 @@ def main():
         elif o in ("-k", "--keys"):
             keys = int(a)
         elif o in ("-km", "--key_matching"):
-            key_matching = a
+            key_matching = float(a)
         elif o in ("-s", "--size"):
             dataset_size = float(a)
         else:
